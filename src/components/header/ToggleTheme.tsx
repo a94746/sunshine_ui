@@ -1,7 +1,7 @@
-import {useThemeChange} from "@/common/Theme.jsx";
+import {useThemeChange} from "@/common/Theme";
 import themeToggleLightImg from "@/assets/theme-toggle-light.png";
 import themeToggleDarkImg from "@/assets/theme-toggle-dark.png";
-import styled from "styled-components";
+import styled from "styled-components"
 
 const StyledButton = styled.button`
     height: 3rem;

@@ -1,20 +1,25 @@
 import {ThemeProvider} from "styled-components";
-import {createContext, useCallback, useContext, useMemo, useState} from "react";
-import {lightColorScheme, darkColorScheme} from "@/common/Styles.jsx";
+import {createContext, ReactNode, useCallback, useContext, useMemo, useState} from "react";
+import {lightColorScheme, darkColorScheme} from "@/common/Styles";
 
-const ThemeChangeContext = createContext();
+const ThemeChangeContext = createContext<ThemeContext | undefined>(undefined);
 
-export const useThemeChange = () => useContext(ThemeChangeContext)
+export const useThemeChange = ()  => {
+    const context = useContext(ThemeChangeContext)
+    if (!context) throw new Error("context error")
+    return context
+}
 
 const initialTheme = lightColorScheme
 
-export default function Theme({ children }) {
+export default function Theme({ children } : { children? : ReactNode }) {
     const [theme, setTheme] = useState(initialTheme);
 
     const toggleTheme = useCallback(() => {
         switch (theme) {
             case darkColorScheme: setTheme(lightColorScheme); break
             case lightColorScheme: setTheme(darkColorScheme); break
+            default: throw new Error("Unknown theme was set")
         }},
         [theme]
     )
@@ -23,10 +28,11 @@ export default function Theme({ children }) {
             switch (theme) {
                 case darkColorScheme: return false
                 case lightColorScheme: return true
+                default: throw new Error("Unknown theme was set")
             }},
         [theme]
     )
-    const themeChangeContextValue = useMemo(() => ({
+    const themeChangeContextValue : ThemeContext = useMemo(() => ({
         isLightThemeNow,
         toggleTheme
     }), [isLightThemeNow, toggleTheme]);
@@ -38,4 +44,9 @@ export default function Theme({ children }) {
             </ThemeProvider>
         </ThemeChangeContext.Provider>
     )
+}
+
+interface ThemeContext {
+    isLightThemeNow: boolean;
+    toggleTheme: () => void;
 }

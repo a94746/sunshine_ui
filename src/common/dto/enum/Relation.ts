@@ -1,0 +1,6 @@
+export enum Relation {
+    LONG_LOVE= "LONG_LOVE",
+    FAST_LOVE= "FAST_LOVE",
+    FRIENDSHIP= "FRIENDSHIP",
+    ACQUAINTANCE= "ACQUAINTANCE",
+}

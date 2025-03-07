@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Theme from "./common/Theme.jsx";
+import Theme from "./common/Theme.js";
 import {Route, Routes} from "react-router-dom";
-import Title from "./components/header/Title.jsx";
-import LoginPage from "./components/login/LoginPage.jsx";
-import MainPage from "./components/main/MainPage.jsx";
-import MatchPage from "./components/match/MatchPage.jsx";
-import ProfilePage from "./components/profile/ProfilePage.jsx";
-import NotFoundPage from "./components/not_found/NotFoundPage.jsx";
-import Header from "./components/header/Header.jsx";
+import Title from "./components/header/Title.js";
+import LoginPage from "./components/login/LoginPage.js";
+import MainPage from "./components/main/MainPage.js";
+import MatchPage from "./components/match/MatchPage.js";
+import ProfilePage from "./components/profile/ProfilePage.js";
+import NotFoundPage from "./components/not_found/NotFoundPage.js";
+import Header from "./components/header/Header.js";
 
 const AppWrapper = styled.div`
     width: 100%;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {border} from "@/common/Styles.jsx";
+import {border} from "@/common/Styles";
+import {MouseEventHandler, ReactNode} from "react";
 
 const StyledButton = styled.button`
     padding: 0.3rem 1rem;
@@ -27,7 +28,7 @@ const StyledMainButton = styled(StyledButton)`
     }
 `
 
-export default function ButtonMain({children, onClick}) {
+export function ButtonMain({children, onClick} : ButtonProps) {
     return (
         <StyledMainButton onClick={onClick}>
             {children}
@@ -35,10 +36,15 @@ export default function ButtonMain({children, onClick}) {
     )
 }
 
-export function ButtonSecondary({children, onClick}) {
+export function ButtonSecondary({children, onClick} : ButtonProps) {
     return (
         <StyledSecondaryButton onClick={onClick}>
             {children}
         </StyledSecondaryButton>
     )
+}
+
+interface ButtonProps {
+    children?: ReactNode,
+    onClick: MouseEventHandler
 }

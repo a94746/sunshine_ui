@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 
-export default function Title() {
+export default function Title() : null {
     const location = useLocation();
 
     useEffect(() => {
@@ -9,4 +9,5 @@ export default function Title() {
             document.title = 'Login Sunshine';
         }
     }, [location]);
+    return null
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ToggleTheme from "@/components/header/ToggleTheme.jsx";
+import ToggleTheme from "@/components/header/ToggleTheme";
 
 const StyledHeader = styled.header`
     position: absolute;

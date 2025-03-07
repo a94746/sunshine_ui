@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {border} from "@/common/Styles.jsx";
+import {border} from "@/common/Styles";
+import {ChangeEventHandler} from "react";
 
 const StyledInput = styled.input`
     width: 15rem;
@@ -18,14 +19,20 @@ const StyledInput = styled.input`
     }
 `
 
-export default function InputText({ onChange, value, placeholder }) {
+export function InputText(props: InputProps)  {
     return (
-        <StyledInput type="text" onChange={onChange} value={value} placeholder={placeholder} />
+        <StyledInput type="text" {...props} />
     )
 }
 
-export function InputPassword({ onChange, value, placeholder }) {
+export function InputPassword(props: InputProps) {
     return (
-        <StyledInput type="password" onChange={onChange} value={value} placeholder={placeholder} />
+        <StyledInput type="password" {...props} />
     )
+}
+
+interface InputProps {
+    onChange: ChangeEventHandler,
+    value: string,
+    placeholder?: string
 }

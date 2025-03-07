@@ -1,6 +1,6 @@
 import {css} from "styled-components";
 
-export const lightColorScheme = {
+export const lightColorScheme : ColorScheme = {
     colors: {
         backgroundPrimary: "rgb(255, 255, 190)",
         textOnPrimary: "rgb(20, 20, 20)",
@@ -18,7 +18,7 @@ export const lightColorScheme = {
         error: "rgb(255, 69, 0)",
     }
 }
-export const darkColorScheme = {
+export const darkColorScheme : ColorScheme = {
     colors: {
         backgroundPrimary: "rgb(30, 30, 30)",
         textOnPrimary: "rgb(245, 245, 220)",
@@ -41,3 +41,9 @@ export const border = css`
     border: 2px solid ${p => p.theme.colors.accent1};
     border-radius: 1rem;
 `
+
+interface ColorScheme {
+    colors: {
+        [key: string]: string;
+    }
+}
