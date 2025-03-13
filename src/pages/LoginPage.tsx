@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import {InputText, InputPassword} from "@/components/login/Input";
+import {InputPassword, InputText} from "@/components/login/Input";
 import {useState} from "react";
 import {ButtonMain, ButtonSecondary} from "@/components/login/Button";
-import Block from "@/common/components/Block";
+import Block from "@/components/shared/Block";
 import {useTranslation} from "react-i18next";
 import useLoginForm from "@/components/login/useLoginForm";
 

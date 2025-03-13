@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import {border} from "@/common/Styles";
 import {MouseEventHandler, ReactNode} from "react";
 
 const StyledButton = styled.button`
     padding: 0.3rem 1rem;
     margin: 1rem;
-    ${border};
+    border: 2px solid ${p => p.theme.colors.accent1};
+    border-radius: 1rem;
 `
 
-const StyledSecondaryButton = styled(StyledButton)`
+export const StyledSecondaryButton = styled(StyledButton)`
     background-color: ${p => p.theme.colors.backgroundSecondary};
     color: ${p => p.theme.colors.textOnSecondary};
 
@@ -18,7 +18,7 @@ const StyledSecondaryButton = styled(StyledButton)`
     }
 `
 
-const StyledMainButton = styled(StyledButton)`
+export const StyledMainButton = styled(StyledButton)`
     background-color: ${p => p.theme.colors.backgroundTertiary};
     color: ${p => p.theme.colors.textOnTertiary};
 

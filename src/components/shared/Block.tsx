@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import { ReactNode } from 'react';
+import {ReactNode} from 'react';
 
-const StyledDiv = styled.div`
+const StyledDiv = styled.div<{ $height: string }>`
+    height: ${({ $height }) => $height};
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,9 +14,9 @@ const StyledDiv = styled.div`
     background-color: ${p => p.theme.colors.backgroundSecondary};
 `
 
-export default function Block({ children }: { readonly children?: ReactNode }) {
+export default function Block({ children, height = "auto"}: { children?: ReactNode, height?: string }) {
     return (
-        <StyledDiv>
+        <StyledDiv $height={height}>
             {children}
         </StyledDiv>
     )

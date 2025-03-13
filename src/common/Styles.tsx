@@ -1,5 +1,3 @@
-import {css} from "styled-components";
-
 export const lightColorScheme : ColorScheme = {
     colors: {
         backgroundPrimary: "rgb(255, 255, 190)",
@@ -15,6 +13,7 @@ export const lightColorScheme : ColorScheme = {
 
         accent1: "rgb(20, 20, 20)",
         accent2: "rgb(255, 255, 0)",
+        accent3: "rgb(20, 20, 20)", // opposite to accent1
         error: "rgb(255, 69, 0)",
     }
 }
@@ -32,15 +31,11 @@ export const darkColorScheme : ColorScheme = {
         textOnTertiary: "rgb(50, 50, 50)",
 
         accent1: "rgb(245, 245, 220)",
-        accent2: "rgb(180, 180, 0)",
+        accent2: "rgb(220, 220, 0)",
+        accent3: "rgb(20, 20, 20)", // opposite to accent1
         error: "rgb(128, 0, 0)",
     }
 }
-
-export const border = css`
-    border: 2px solid ${p => p.theme.colors.accent1};
-    border-radius: 1rem;
-`
 
 interface ColorScheme {
     colors: {

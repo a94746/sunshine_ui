@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {border} from "@/common/Styles";
 import {ChangeEventHandler} from "react";
 
 const StyledInput = styled.input`
@@ -7,7 +6,8 @@ const StyledInput = styled.input`
     height: 2.5rem;
     padding-left: 0.8rem;
     margin: 1rem;
-    ${border};
+    border: 2px solid ${p => p.theme.colors.accent1};
+    border-radius: 1rem;
     outline: none;
     background-color: ${p => p.theme.colors.backgroundSecondary};
     color: ${p => p.theme.colors.textOnSecondary};

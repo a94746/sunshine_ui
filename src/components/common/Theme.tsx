@@ -1,6 +1,6 @@
 import {ThemeProvider} from "styled-components";
 import {createContext, ReactNode, useCallback, useContext, useMemo, useState} from "react";
-import {lightColorScheme, darkColorScheme} from "@/common/Styles";
+import {darkColorScheme, lightColorScheme} from "@/common/Styles";
 
 const ThemeChangeContext = createContext<ThemeContext | undefined>(undefined);
 

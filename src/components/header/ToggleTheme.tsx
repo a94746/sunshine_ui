@@ -1,29 +1,25 @@
-import {useThemeChange} from "@/common/Theme";
-import themeToggleLightImg from "@/assets/theme-toggle-light.png";
-import themeToggleDarkImg from "@/assets/theme-toggle-dark.png";
-import styled from "styled-components"
+import {useThemeChange} from "@/components/common/Theme";
+import themeToggleLightImg from "@/assets/header/light/theme-toggle-light.png";
+import themeToggleDarkImg from "@/assets/header/dark/theme-toggle-dark.png";
+import styled from "styled-components";
+import {ImgButtonWithBorder} from "@/components/shared/ImgButton";
 
-const StyledButton = styled.button`
-    height: 3rem;
-    width: 3rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
-`
-const StyledImg = styled.img`
-    height: 100%;
-    width: 100%;
-    filter: drop-shadow(0 0 1px ${p => p.theme.colors.accent1})
-        drop-shadow(0 0 0 ${p => p.theme.colors.accent1})
-        drop-shadow(0 0 0 ${p => p.theme.colors.accent1})
-        drop-shadow(0 0 0 ${p => p.theme.colors.accent1});
+const StyledContainer = styled.div`
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export default function ToggleTheme() {
     const {isLightThemeNow, toggleTheme} = useThemeChange()
+
     return (
-        <StyledButton onClick={toggleTheme}>
-            <StyledImg src={isLightThemeNow ? themeToggleLightImg : themeToggleDarkImg} alt="toggle theme"/>
-        </StyledButton>
+        <StyledContainer>
+            <ImgButtonWithBorder src={isLightThemeNow ? themeToggleLightImg : themeToggleDarkImg}
+                       onClick={toggleTheme}
+                       alt={"Toggle theme"}/>
+        </StyledContainer>
     )
 }
